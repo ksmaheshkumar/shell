@@ -1,7 +1,3 @@
-# Introduction
-
-Here you can find my sheel script, for the best and for the lulze.
-
 # dnsbruteforce
 ### generate-subdomains-lists
 You can use this script to generate few list with basic subdomain names.
