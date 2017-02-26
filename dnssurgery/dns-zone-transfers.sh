@@ -2,13 +2,13 @@
 
 if [ -z $1 ]; then
   echo -e "\n[+] DNS zone transfert script"
-  echo -e "[+] Usage   : $0 <domain name>\n"
+  echo -e "[+] Usage : $0 <domain name>\n"
   exit 0
 fi
 
-echo -e "\n[+] Start zone transfert test ...\n"
+echo -e "\n[+] Start zone transfert ...\n"
 for server in $(host -t NS $1 |cut -d" " -f4); do
-  host -l $1 $server |grep "has address"
+  host -l $1 $server |grep "has address" |cut -d" " -f1,4
 done
 
-echo -e "\n[+] Stope zone transfert test.\n"
+echo -e "\n[+] End zone transfert.\n"
