@@ -8,7 +8,7 @@ fi
 
 echo -e "\n[+] Start zone transfer ...\n"
 for server in $(host -t NS $1 |cut -d" " -f4); do
-  host -l $1 $server |grep "has address" |cut -d" " -f1,4
+  host -a -l $1 $server |grep "has address" |cut -d" " -f1,4
 done
 
 echo -e "\n[+] End zone transfer.\n"
